@@ -13,6 +13,11 @@ models:
   - name: stg_orders
     description: Staged order data from our jaffle shop app.
     columns: 
+      - name: order_id
+        description: The primary key for orders.
+        tests:
+          - unique
+          - not_null 
       - name: status
         description: "{{ doc('order_status') }}"
         tests:
